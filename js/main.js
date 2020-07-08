@@ -22,6 +22,11 @@ function getAll() {
 
 function searchCountry() {
     const name = document.querySelector('#countryName').value;
+    if (name === '') {
+        document.querySelector('#noName').style.visibility = 'visible';
+        setTimeout(function() {document.querySelector('#noName').style.visibility = 'hidden'}, 1000);
+        return;
+    }
     const url = `https://restcountries.eu/rest/v2/name/${name}`;
     getCountries(url, showCountries);
 }

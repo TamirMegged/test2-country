@@ -94,3 +94,21 @@ button:hover {
     text-align: center;
     font-size: 30px;
 }
+
+/* No Name Popup */
+#noName {
+    visibility: hidden;
+    padding: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(0, 2, 78);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
