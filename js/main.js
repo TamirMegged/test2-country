@@ -39,10 +39,17 @@ function showCountries() {
                     <div title="Name"><b>${country.name}</b></div>
                     <div title="Capital">${country.capital}</div>
                     <div title="Top Level Domain">${country.topLevelDomain}</div>
-                    <div title="Borders by Alpha-3 Codes" style="flex-wrap: wrap;">${country.borders.length === 0 ? "No Borders" : country.borders}</div>
+                    <div title="Borders by Alpha-3 Codes">${sortBorders(country.borders)}</div>
                     <div title="Currencies">${country.currencies[0].code} ${country.currencies[0].name} ${country.currencies[0].symbol}</div>
                 </div>`).join('');
     const container = document.querySelector('#countriesContainer');
     container.innerHTML = html;
     document.querySelector('body').classList.remove('worldMap');
+}
+
+function sortBorders(countryBorders) {
+    if (countryBorders.length === 0) {
+        return "No Borders";
+    }
+    return countryBorders.join(', ');
 }
