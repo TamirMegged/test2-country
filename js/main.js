@@ -23,6 +23,7 @@ function getAll() {
 function searchCountry() {
     const name = document.querySelector('#countryName').value;
     if (name === '') {
+        document.querySelector('#countryName').focus();
         document.querySelector('#noName').style.visibility = 'visible';
         setTimeout(function() {document.querySelector('#noName').style.visibility = 'hidden'}, 1000);
         return;
